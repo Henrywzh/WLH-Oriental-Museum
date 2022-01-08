@@ -47,5 +47,6 @@ class CreateGraph:
         plt.legend(loc="upper left")
         plt.show()
 
-mygraph = CreateGraph(yr1, yr2, p1, p2, mymodel1, mymodel2, myline, font)
-mygraph.plotting(yr1, yr2, p1, p2, mymodel1, mymodel2, myline, font)
+if __name__ == '__main__':
+    mygraph = CreateGraph(yr1, yr2, p1, p2, mymodel1, mymodel2, myline, font)
+    mygraph.plotting(yr1, yr2, p1, p2, mymodel1, mymodel2, myline, font)
