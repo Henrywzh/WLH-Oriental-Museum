@@ -2,7 +2,7 @@ import re
 import urllib.request, urllib.error
 
 def main(): #Main function
-    data = askURL('http://www.sohu.com/a/471131994_120500588')
+    data = askURL('http://www.sohu.com/a/471131994_120500588') #A chinese website
     save = saveData(data)
     getData(save)
 
@@ -29,7 +29,7 @@ def getData(x): #Clean and change data, eg removing blank space and changing cur
     print(price)
 
 def saveData(savepath):
-    return re.findall('成交价.+HKD|成交价.+USD|成交价.+GBP|成交价.+[^HKDUGBP]RMB',savepath) #Searching the price
+    return re.findall('成交价.+HKD|成交价.+USD|成交价.+GBP|成交价.+[^HKDUGBP]RMB',savepath) #Searching the price, 成交价 means the released price in chinese
 
 def askURL(url): #Getting data online
     head = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36"}
