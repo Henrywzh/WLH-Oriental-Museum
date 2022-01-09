@@ -19,7 +19,7 @@ class Model:
 
         return [X,Y,Z]
 
-    def plotting(self, fig):
+    def plotting(self):
         axesList = self.calculating()
         ax = self.fig.add_subplot(111, projection='3d')
         ax.set_xlabel('Muye Cup')
@@ -35,4 +35,4 @@ class Model:
 if __name__ == '__main__':
     fig = plt.figure(figsize=(5,5))
     my3D = Model(fig)
-    my3D.plotting(fig)
+    my3D.plotting()
