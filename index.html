@@ -3,25 +3,151 @@
 <title>WLH Museum</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="index.css" type="text/css">
+<style>
+body,h1,h2,h3,h4,h5,h6,p {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+  font-family: Verdana, sans-serif; 
+  margin:0;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://i.imgur.com/FgFqjvS.jpg");
+  min-height: 100%;
+}
+
+.w3-hover-opacity {
+  width: 100%;
+  height: 250px;
+  max-width: 400px;
+  min-width: 200px;
+  object-fit: cover;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+
+#logo {
+  height: 45px;
+  width: 55px;
+  margin: -8px;
+}
+
+.colorDark {
+  background-color: rgb(51,51,51);
+}
+
+.colorGold {
+  color: rgb(182,166,145)
+}
+
+.word {
+  color: white;
+}
+
+.box{
+  width: 1200px;
+  border: 1px solid #aaa;
+  padding: 20px 10px;
+  margin: 100px auto;
+}
+
+* {box-sizing: border-box}
+/* body {} */
+.mySlides {display: none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 400px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
 
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top colorDark">
   <div class="w3-bar w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide"><img id='logo' src='https://i.imgur.com/enWr9GR.jpg'></a>
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img id='logo' src='https://i.imgur.com/lkNZZ8N.jpg'></a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small word">
-      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-      <!-- <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a> -->
       <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> ARTICLE</a>
       <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
       <a href="#photos" class="w3-bar-item w3-button"><i class="fa"><img src='https://www.pngplay.com/wp-content/uploads/13/Black-And-White-Instagram-Logo-PNG-Photos.png' style='width:20px'></i> PHOTOS</a>
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
-      <!-- <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> COMMENT</a> -->
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -34,67 +160,22 @@
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <!-- <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a> -->
   <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
   <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
   <a href="#photos" onclick="w3_close()" class="w3-bar-item w3-button">PHOTOS</a>
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
-  <!-- <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">COMMENT</a> -->
 </nav>
 
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-left w3-text-white" style="padding:48px">
-    <span class="w3-jumbo w3-hide-small">Song Dynasty Artifacts</span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Song Dynasty Artifacts</span><br>
-    <span class="w3-large">A website filled with amazing Song Dynasty Aritfacts</span>
+    <span class="w3-jumbo w3-hide-small">Chinese Artifacts</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Chinese Artifacts</span><br>
+    <span class="w3-large">A website filled with amazing Chinese Aritfacts</span>
     <p><a href="#work" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more about our articles</a></p>
   </div> 
 
 </header>
-
-<!-- About Section -->
-<div class="w3-container colorDark word" style="padding:128px 16px" id="about">
-  <h3 class="w3-center colorGold">ABOUT THE TEAM</h3>
-  <p class="w3-center w3-large">Key features of our team</p>
-  <div class="w3-row-padding w3-center" style="margin-top:64px">
-    <div class="w3-quarter">
-      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large colorGold">Website</p>
-      <p>The place where we publish our new articles and provide other information.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large colorGold">Passion</p>
-      <p>Our team are filled with passion to do the best that we can in our own areas.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large colorGold">Analysis</p>
-      <p>Our website provides data analysis for various artifacts from Song Dynasty.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large colorGold">Support</p>
-      <p>We wil provide any assistance related to our articles if needed</p>
-    </div>
-  </div>
-</div>
-
-<!-- Promo Section - "We know design" -->
-<div class="w3-container colorDark word" style="padding:128px 16px">
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3 class='colorGold'>Unique Articles</h3>
-      <p>We will publish new articles about Song dynasty Artifacts frequently</p>
-      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Works</a></p>
-    </div>
-    <div class="w3-col m6">
-      <img class="w3-image w3-round-large" src="https://i.imgur.com/t3GzmkC.jpg" alt="Buildings" width="700" height="394">
-    </div>
-  </div>
-</div>
 
 <!-- Work Section -->
 <div class="w3-container colorDark word" style="padding:128px 16px" id="work">
@@ -103,10 +184,16 @@
 
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-col l3 m6"><p>Jizhou Ware Muye Cup</p>
-      <a href="https://drive.google.com/file/d/1V99ue_T0oCn5xfYOYAUwojnGlNByMSwd/view?usp=sharing"><img src="https://i.imgur.com/lF9DjBx.jpg" class="w3-hover-opacity" alt="Article 1"></a>
+      <a href="https://wlhmuseum.w3spaces.com/muyecup.html"><img src="https://i.imgur.com/CK1lLWG.png" class="w3-hover-opacity" alt="Muye Cup"></a>
     </div>
     <div class="w3-col l3 m6"><p>Black Glaze - The Forgotten</p>
-      <a href='https://drive.google.com/file/d/1J6QHUPznrTfb7R4Qsczrplflx2uWOXb2/view?usp=sharing'><img src="https://i.imgur.com/I8gNdZN.jpg" class="w3-hover-opacity" alt="A phone"></a>
+      <a href='https://wlhmuseum.w3spaces.com/blackglaze.html'><img src="https://i.imgur.com/I8gNdZN.jpg" class="w3-hover-opacity" alt="Black Glaze"></a>
+    </div>
+    <div class="w3-col l3 m6"><p>Black Glaze - Video</p>
+      <a href='https://youtu.be/DLhsNdBtxFM'><img src="https://i.imgur.com/oGr0nHy.jpg" class="w3-hover-opacity" alt="Black Glaze"></a>
+    </div>
+    <div class="w3-col l3 m6"><p>研山铭(yan shan ming) - Video</p>
+      <a href='https://youtu.be/oxj7w1EkFdg'><img src="https://i.imgur.com/FgFqjvS.jpg" class="w3-hover-opacity" alt="研山铭yan shan ming"></a>
     </div>
   </div>
 </div>
@@ -128,15 +215,43 @@
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-col l3 m6"><p>The Price of Muye Cup</p>
       <img src="https://i.imgur.com/ZFl7iU9.png" onclick="onClick(this)" class="w3-hover-opacity" alt="When we started looking at samples of Muye cups in different collections and auction results, we realised that there are many levels of qualities of different Muye cups, thus their price varies a lot. Hence, we included two different levels of Muye cups, differentiated by their quality, one kind with relatively better quality (blue line) and the other with relatively worse quality (yellow line).
+
 From 2006 to 2013, the number of auctions on Muye cups was not as many as the later years, this is because the reputation of the Muye cups was not so famous in earlier years, hence collectors were likely to hold the Muye cups to themselves, in addition, the prices of Muye cups had not increased much compared to the price they have brought them. This led to a very little number of Muye cups being shown to the public, thus the comparison between prices of good and bad quality Muye cups was small. This made the price of good and less good quality Muye cups around the same price. as they were both rarely seen at auctions, Muye cups, in general, were highly demanded no matter the quality.
+
 Nevertheless, from 2014 onwards, the prices of Muye cups separated into two levels. This is because the Japanese culture and thought of artifacts influenced China, which has great potential in the art dealing industry. On the one hand, the prices of good quality Muye cups were boosted. This is because the good quality Muye cups were sold between collectors or put on auctions already, thus inherited richen, and since that the price increased throughout time. On the other hand, the price of less good quality Muye cups declined significantly, since the relatively good quality Muye cups were shown to the public, although the demand did not reduce, the comparison between Muye cups led to the price of less qualified ones decreasing. Besides, some less good quality Muye cups can be derecognised as forged ones, thus the estimated price offered from collectors will be hugely lower than others. 
         ——  By Hau Lam Lo">
     </div>
     <div class="w3-col l3 m6"><p>The Price of Chinese Bronze</p>
       <img src="https://i.imgur.com/XMZzbRn.png" onclick="onClick(this)" class="w3-hover-opacity" alt="After doing our research on Chinese Bronze artifacts, we have made two different diagrams to present our result. The first graph is about bronzes that do not have any inscriptions on them, their prices first increased gradually from 2011, the start of the graph, then reached a peak in 2017. This is because different auction houses, like Christie's and Sotheby, brought out various bronze artifacts, thus the spotlight of the industry got onto Chinese bronze artifacts. However, in 2019, the pandemic starts so the communication and transaction between nations is affected significantly, hence fewer bronze artifacts were auctioned from 2019 to 2020. 
+
 In the second graph, those yellow dots represented bronze artifacts that have inscriptions on them; thus the prices were higher than those that do not have. In the standard of judging Chinese bronze artifacts, those with inscriptions on them could help archeologists to discover and understand more about the historical period that the artifacts are from, also they often have an inheritance or story on them. Hence, both the academic and economic value of these pieces are higher. 
+
 In addition, we realised that the price of bronze without inscriptions on them was affected by the price of those which have inscriptions. Frequently, the bronze artifacts were in one thematic auction, in which the buyers and collectors made irrational decisions. When the price of bronzes with inscriptions was sold at higher prices, the bronzes without inscriptions will be estimated at a higher price. This phenomenon appears especially when Chinese bronze artifacts were unabated, which is from 2017 to 2018. Nevertheless, the habit of collecting ancient Chinese bronze artifacts was started by the Song people, which is about 1000 years ago in China. Thus the price of bronze artifacts was already very mature, so the price overall will be relatively stable than collections.
          ——  By Hau Lam Lo">
+    </div>
+    <div class="w3-col l3 m6"><p>The Change in Price Index</p>
+      <img src="https://i.imgur.com/lVfxDYM.png" onclick="onClick(this)" class="w3-hover-opacity" alt="In recent years, the Chinese art auction market has seen obvious polarization: on the one hand, the transaction volume of low-end and medium-end ordinary art has shrunk. In the top market of art auctions, several companies or entrepreneurs compete for rare fine art at sky-high prices as the treasures of the private art museums they have established. The cultural strategic layout, asset allocation, advertising, and taste show off. With time, the Chinese art auction market has been continuously upgraded. There are fewer and fewer pure collectors who only focus on the spiritual value of culture or pure speculators who only want to make money. The irrational era of blind pursuit of capital has passed, and investors generally With high art appreciation ability and considerable economic strength, purchasing fine art in domestic and overseas markets not only meets spiritual needs such as aesthetic pleasure and social status but also hopes to realize asset allocation and risk diversification by investing in art.
+
+ The significant thing that is worth pointing out is the price of arts in Hong Kong and Beijing, which gradually but constantly increased throughout time. This is because of the economic growth of China and the boost of globalization in the early 21st century. With more communication across the globe, more opportunities are opened to the dealers, sellers, and auction houses; hence the trading volume increased, leading to an increase in the price of the art. As the port of communication with China and the globe, Hong Kong has a pivotal position in the arts and auction market. The growing numbers of galleries and private dealers, as the primary market, foundered the price of arts in Hong Kong; also raised the price in auction houses, as a secondary market to the industry. 
+ 
+          ——  By Hau Lam Lo">
+    </div>
+    <div class="w3-col l3 m6"><p>Mainland & World Comparison</p>
+      <img src="https://i.imgur.com/YzQMFYF.png" onclick="onClick(this)" class="w3-hover-opacity" alt="We compared the quantity and price of different types of artworks in mainland China and overseas (the mainland in this picture does not include Hong Kong, the reason will be explained later). On the whole, although the quantity and variety of auction items in mainland China are better than overseas, the price is not high. After comparing the transaction volume and transaction price of ink painting in the mainland and overseas, we will find that the mainland has a great advantage in quantity, almost 10 times the quantity; but the overall price and average price are not as good as overseas (including Hongkong). This is because Chinese ink paintings overseas are mostly fine and orderly due to historical reasons, so the prices are mostly high. On the other hand, in mainland China, there are countless creators of ink painting, and the level and price of their works are uneven, so the average price is lowered. Another point is that the auction mechanism and laws and regulations in the mainland are not perfect, and there are still many restrictions and regulations; the cultural relics and paintings of the Song Dynasty can only be dated from the Ming Dynasty, and the jades of the War and Han Dynasties can only be called imitations. Therefore, collectors are reluctant to send their private collections to auction, which also lowers the transaction price in mainland China. The above picture does not include Hong Kong in the mainland because its auction institutions and industry are already mature, and its restrictions are no different from overseas. So we included data from Hong Kong overseas. In this way, the current situation of the two auction industries can be compared through the transaction volume and transaction price.
+
+——  By Hau Lam Lo">
+    </div>
+    <div class="w3-col l3 m6"><p>Chinese Artifacts Industry</p>
+      <a href="https://docs.google.com/document/d/1hZwBRwvnqTJHPniew2C1JnQPSNSY-IP3QaTYTrM4wsQ/edit?usp=sharing"><img src="https://i.imgur.com/lgZ3Rfz.png" class="w3-hover-opacity" alt="Chinese Artifacts Industry"></a>
+    </div>
+    <div class="w3-col l3 m6"><p>Total Price</p>
+      <a href="https://docs.google.com/document/d/1FzvivHK0aeumLb3EnCmUMs3NOK6XkojJIrcfLCRLGPI/edit?usp=sharing"><img src="https://i.imgur.com/JYqW9Or.png" class="w3-hover-opacity" alt="Chinese Artifacts Industry"></a>
+    </div>
+    <div class="w3-col l3 m6"><p>Transactions</p>
+      <a href="https://docs.google.com/document/d/1xXTi37apkB-6fZvIbDqcAnYvRtuniHDPcsey1Ro0ziE/edit?usp=sharing"><img src="https://i.imgur.com/G6yv2jX.png" class="w3-hover-opacity" alt="Chinese Artifacts Industry"></a>
+    </div>
+    <div class="w3-col l3 m6"><p>Average Price</p>
+      <a href="https://docs.google.com/document/d/1X_9eG74TEQIYyN_oiuu85hEd9kekNeGj0Y30aB4mTto/edit?usp=sharing"><img src="https://i.imgur.com/dENQNBD.png" class="w3-hover-opacity" alt="Chinese Artifacts Industry"></a>
     </div>
 
 </div>
@@ -244,10 +359,7 @@ In addition, we realised that the price of bronze without inscriptions on them w
   </div>
 </div>
 
-<footer class="w3-center w3-black w3-padding-64">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
- <p class="w3-small">This website was made by Henry Wu, supported by W3school</p>
-</footer>
+
  
 <script>
 // Modal Image Gallery
@@ -299,135 +411,4 @@ function showSlides(n) {
 </script>
 
 </body>
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-
-body, html {
-  height: 100%;
-  line-height: 1.8;
-}
-
-/* Full height image header */
-.bgimg-1 {
-  background-position: center;
-  background-size: cover;
-  background-image: url("https://i.imgur.com/dOxyheG.jpg");
-  min-height: 100%;
-}
-
-.w3-hover-opacity {
-  width: 100%;
-  height: 250px;
-  max-width: 400px;
-  min-width: 200px;
-  object-fit: cover;
-
-}
-
-.w3-bar .w3-button {
-  padding: 16px;
-}
-
-#logo {
-  height: 30px;
-  width: 50px;
-}
-
-.colorDark {
-  background-color: rgb(51,51,51);
-}
-
-.colorGold {
-  color: rgb(182,166,145)
-}
-
-.word {
-  color: white;
-}
-
-.box{
-  width: 1200px;
-  border: 1px solid #aaa;
-  padding: 20px 10px;
-  margin: 100px auto;
-}
-
-* {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
-.mySlides {display: none}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 400px;
-  position: relative;
-  margin: auto;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-
-.active {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
-
-</style>
-
 </html>
-  
