@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<title>WLH Museum</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body,h1,h2,h3,h4,h5,h6,p {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+  font-family: Verdana, sans-serif; 
+  margin:0;
+  background-color: rgb(51,51,51);
+}
+
+img {
+  width:
+}
+
+.w3-hover-opacity {
+  width: 100%;
+  height: 250px;
+  max-width: 400px;
+  min-width: 200px;
+  object-fit: cover;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+
+#logo {
+  height: 45px;
+  width: 55px;
+  margin: -8px;
+}
+
+.colorDark {
+  background-color: rgb(51,51,51);
+}
+
+.colorGold {
+  color: rgb(182,166,145)
+}
+
+.word {
+  color: white;
+}
+
+.box{
+  width: 1200px;
+  border: 1px solid #aaa;
+  padding: 20px 10px;
+  margin: 100px auto;
+}
+
+* {box-sizing: border-box}
+/* body {} */
+.mySlides {display: none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 400px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top colorDark">
+  <div class="w3-bar w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img id='logo' src='https://i.imgur.com/lkNZZ8N.jpg'></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small word">
+      <a href="https://wlhmuseum.w3spaces.com/index.html#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> ARTICLE</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#photos" class="w3-bar-item w3-button"><i class="fa"><img src='https://www.pngplay.com/wp-content/uploads/13/Black-And-White-Instagram-Logo-PNG-Photos.png' style='width:20px'></i> PHOTOS</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#photos" onclick="w3_close()" class="w3-bar-item w3-button">PHOTOS</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Work Section -->
+<div class="w3-container colorDark word" style="padding:128px 16px" id="work">
+  <h3 class="w3-center colorGold">Black Glaze-A Light in the History of Porcelain</h3>
+  <p class='w3-center w3-large'>Lo Hau Lam</p>
+  <p class="w3-center">Black porcelain is often neglected in the history of ceramics, except for the tea culture in the  Song Dynasty. Glazed black porcelain is seldom favoured and paid attention by people. Although  black glaze is not as beautiful as pastel and contending colour, nor as famous as celadon and white  porcelain, black porcelain is also an indispensable part in the history of Chinese ceramics. Glaze:  The glaze surface is black or dark brown. The main colouring agents of the black glaze are iron  oxide and a small amount or trace amount of oxidising colorants such as manganese, cobalt,  copper and chromium. Generally, the proportion of iron oxide in the glaze of reddish brown or  dark brown porcelain is about 8%. If the glaze layer is thickened to 1.5 mm, the fired glaze colour  is pure black. With iron as colouring agent, the coating is about 1.5 mm thick, and it is pure black  after oxidising flame roasting. </p>
+  <p class='w3-center'>In accordance with archaeological evidence, the earliest black glaze porcelain was unearthed in  the 170-year-old tomb of the Eastern Han Dynasty (the tomb of Cao Shi in Haoxian County) in  Jianning County, Anhui Province. Most of the black glazed porcelain found in the tombs are  simple in shape and rough in making, which are the products of the original porcelain making  method. During the Six Dynasties period, black glazed porcelain was prosperous and thriving. The  Deqing kiln site found in Deqing County, Huzhou City, Zhejiang Province has a large number of  physical specimens for reference. It once unearthed black glazed porcelain with complete firing,  full shape and lacquered glaze. These ancient kiln sites include the original kiln sites from the end  of Shang Dynasty to the beginning of Zhou Dynasty to the Spring and Autumn Period and the  Warring States Period, and the porcelain kiln sites of the Eastern Han Dynasty and the Sui and  Tang Dynasties. The original porcelain unearthed in the kiln site contains not only a large number  of daily utensils produced commercially, but also funeral utensils specially imitating bronze ritual  vessels. These archaeological discoveries have found the source for the invention of porcelain.  Their significance not only belongs to the category of ceramic history, but also belongs to the  history of Shang and Zhou civilisation. The emergence and development of Primordial Porcelain  can be said to be the important contribution of ancient Vietnamese to the Chinese civilisation and  even the world civilisation. (Fig. 1 Black-glazed Chicken Head Pot from Deqing Kiln in the Song  Dynasty, Collected by Beijing Palace Museum)</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/tsSyPVQ.png" class="w3-hover-opacity" onclick="onClick(this)" alt='fig1'>
+        <p>Fig. 1</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/642400a.png" class="w3-hover-opacity" onclick="onClick(this)" alt='fig2'>
+        <p>Fig. 2</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/qFxNeac.png?1" class="w3-hover-opacity" onclick="onClick(this)" alt='fig3'>
+        <p>Fig. 3</p>
+    </div>
+  </div>
+
+  <p class="w3-center">Since we mentioned the heyday of black porcelain, it reminded us of the Song Dynasty,  where tea culture prevailed. In the Song Dynasty, the tea industry was fond of Diancha--an ancient  tea-making method, and black glazed porcelain was the most popular tea set. In the Song Dynasty,  Ding Kiln, Yaozhou Kiln, Jizhou Kiln and Jianyao Kiln were famous kilns for firing black  porcelain. Ding kiln, together with the other four kilns of Ru, Guan, Ge and Jun, was named as  one of the five famous kilns in ancient China. Ding kiln was famous for its white colour. During  the Song Dynasty, white porcelain was produced in large quantities because of the popularity of  the mainstream market. However, the reason why Ding Kiln became famous is definitely that not  only it has taken care of the mass market, but also a small number of people think that Bai Ding is  too plain or has other uses. Therefore, Ding kiln developed Ziding, Heiding and Lvding on the  basis of Baiding. Cao Zhao of the Ming Dynasty, in On the Essentials of Gegu, said that Ding  Kiln’s black porcelain “There are Ziding-purple, Heiding-black, both them are white soil, and  their price is higher than Baiding.” Gaozong, the emperor of the Qing Dynasty also mentioned  black porcelain: “It is said that purple and black, how to distinguish peace from politics.” (Fig. 2  Heiding Lotus Incense Burner in the Song Dynasty)</p>
+  <p class='w3-center'>In the Song Dynasty, the black glaze can be divided into three grades. The first grade glaze is  dark and bright, the light can be discerned, and the colour is as black as lacquer. As Cao Zhao said 
+in Essential Criteria of Antiquities, “there is Moding, which is black as lacquer”. The second kind  of glazed surface is black and yellowish brown. The third kind of glaze has the colour of “kiln  change”, some of which are like rabbit hairs, some are like round oil drops, some are like the  feathers of a bird, and some are like meteors flying across the sky. All of these are randomly  generated due to the changes of minerals in the tire and glaze during firing. These porcelains all  have various colours on them, but the overall theme is black, which is also classified as Heiding.  Among them, the most famous black porcelain in Heiding is the “Flying Immortals in Heaven”  cup. Different from ordinary black glazed cups, the “Flying Immortals in Heaven” cup is dotted  with reddish-brown spots. It just looks like the stars twinkling, just like the meteors passing by.  Therefore, it is known as “Flying Immortals in Heaven”. (Fig. 3 The Cup of “Flying Immortals in  Heaven” of the Black Partridge Spot in the Northern Song Dynasty)</p>
+  <p class='w3-center'>During the Northern Song Dynasty, the ancients liked tea. The value of black glazed  porcelain in Song Dynasty was mainly reflected by tea cups, because at that time, the ancients  used to contend tea. The tea colour is light green or even grey, which is in sharp contrast with the  black tea cup. Among them, black tea cups bear the brunt. It fully satisfied the value, aesthetic  culture, colour and other requirements pursued by the people at that time. Heiding was not only  popular in the Song Dynasty, but also liked to be collected by scholars in history. Among them,  Zhang Yingwen of Ming Dynasty wrote in Qiangzhangmi : “Ding kiln has two kinds of porcelain,  namely, light porcelain and embossed porcelain. Those with white as positive and white bones  glazed with water like tears are better. Sometimes there are purple and black ones, which are very  rare.” In addition, Xu Cishu of the Ming Dynasty mentioned in Book of Tea: “Tea set, which was  taken from Ding Kiln in ancient times, is also used for grinding tea.” This proves that the literati  in Ming Dynasty also used black porcelain as a utensil for drinking tea. It can be seen that it is not  modern people’s conjecture to associate black porcelain with tea. Additionally, Cai Xiang in the  Northern Song Dynasty pointed out in Tea Record: “In view of the white colour of tea, it is  advisable to use black tea cups, and the tea marks are easy to check.” It can be seen that the  ancients in the Song Dynasty especially liked black glazed cups, black porcelain in the north, Jian  kiln in Fujian and Jizhou kiln in Jiangxi, all of which were the first choice for tea bucket at that  time. (Fig. 4 Heiding Plum Vase in Northern Song Dynasty)</p>
+  <p class='w3-center'>Ding Kiln Black Porcelain is as black as lacquer, and its glaze can shine on people. Heiding  glaze has different thickness. The iron oxide content in the glaze is high. After high temperature  reduction above 1300℃, it becomes iron trioxide (Fe2O3). The black glaze water starts to flow at  high temperature, and an irregular edge is formed at the mouth edge due to the downward flow of  the glaze. The black glaze is not as white as the bottom, forming a strong contrast, which also  meets the aesthetic requirements of the literati in the Song Dynasty.</p>  
+  <p class='w3-center'>Jizhou Kiln, a treasure in the traditional porcelain making process of the Han nationality, is a  world-famous comprehensive porcelain kiln in the south of the Yangtze River (Ji’an, Jiangxi  Province). It has strong local style and artistic characteristics of the Han nationality. Jizhou kiln is  a famous kiln in the history of black glaze. Jizhou kiln products are exquisite and rich, especially  black glazed porcelain. Among them, hawksbill cup, Muye cup, plum blossom cup, paper-cut  applique cup, etc., have been deeply loved by collectors. They are also well-known famous  products. Jigu Kiln, named after the place, rose in the late Tang Dynasty, flourished in the Song 
+Dynasty and declined in the late Yuan Dynasty. </p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/ZGu3awx.png" class="w3-hover-opacity" onclick="onClick(this)" alt='fig4'>
+        <p>Fig. 4</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/2Wyrkof.png" class="w3-hover-opacity" onclick="onClick(this)" alt='fig5'>
+        <p>Fig. 5</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/Vg9gktA.png" class="w3-hover-opacity" onclick="onClick(this)" alt='fig6'>
+        <p>Fig. 6</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/ic1giuW.png" class="w3-hover-opacity" onclick="onClick(this)" alt='fig7'>
+        <p>Fig. 7</p>
+    </div>
+  </div>
+
+  <p class='w3-center'>Jizhou kiln was first burned in the late Tang Dynasty. After the Five Dynasties and the  Northern Song Dynasty, it flourished in the Southern Song Dynasty and finally burned at the end  of Yuan Dynasty. It has a burning history of more than 1,200 years. In the late Tang Dynasty, it  was mainly made of paste brown and milky white glazed porcelain. Since the Northern Song  Dynasty, the paste brown glazed porcelain stopped firing, and the milky white glazed porcelain  continued firing, but the shape has changed and new black glazed porcelain varieties have been  added. The milky white glazed porcelain of this period included astringent circle, high circle foot,  melon ridge belly bowl, brown coloured pot, lid, rhombic plate, lip and lotus-shaped goblet, etc.  Lotus-shaped goblet is a common thing in Northern Song Dynasty. Bowls, pots, dishes, etc. are  not glazed at the bottom, and the bottom cutting is rough. (Fig. 5 Paper-cut Decal Cup from Jizhou  Kiln in the Song Dynasty, Collected in Nanjing Museum) </p>
+  <p class='w3-center'>Jizhou kiln is most famous for its subtle colour changes in black glaze. When facing the light,  the black glaze of Jizhou kiln will reflect brown, crimson, deep purple and even dark blue.  Combined with the decorative patterns carved on the utensils, the combination of the two  highlights the preciousness and beauty of Jizhou kiln, especially in the tea ceremony. Jizhou kiln  is often compared with Jianyao, and both of them were favoured in the Song Dynasty. (Fig. 6  Tortoise Shell Glaze Cup from Jizhou Kiln in the Song Dynasty, Private Collection, Fig. 7 Muye  Cup in the Song Dynasty, Fig. 8 Xi-type Censer in Jizhou Kiln in the Song Dynasty, Fig.9 Plum  Blossom Cup from Jizhou Kiln in the Song Dynasty, Sotheby’s 2016 Hong Kong Spring Auction,  Fig. 10 High Foot Muye cup from Jizhou Kiln in the Northern Song Dynasty, Private Collection) 
+ This cup is a typical Muye cup, with perfect appearance and the most natural and complete  leaf shape, which is superior to similar cups. Generally speaking, the tea cups in Jizhou kiln are  often cracked or scratched, which is caused by the soil quality of the southern kiln mouth. But  there is no crack or line in the whole body of this cup, which has been rare since the Northern  Song Dynasty. Secondly, this cup is a high foot cup. Different from general low-foot Jizhou kiln  tea cups, it accords with the characteristics of early Jizhou kiln tea cups. There is an inclination  angle of 2 degrees to 3 degrees at the bottom of this tea cup, which is also in line with the  characteristics of pedicure at that time. </p>
+  <p class='w3-center'>In the Song Dynasty, the Muye cup was specially burned for the use of eminent monks and  great virtues in temples. Therefore, it has a small amount of existence, which also proves its  cultural value and religious value. Furthermore, there is a thin leaf floating on the black glazed  Muye cup of Jizhou kiln, like a fallen leaf floating on the water. Muye cup is very consistent with  the philosophical and aesthetic concepts at that time. </p>
+  <p class='w3-center'>Jizhou kiln has sufficient and varied glaze colors, including white glaze, black glaze, green  glaze, green glaze, brown glaze, earth yellow glaze, etc. The decoration techniques include  carving, carving, engraving, printing, paper-cut decals and Muye cups, etc. The paper-cut decals,  leaf patterns and painting have the most local characteristics. The black glaze porcelain of Jizhou  kiln and Cizhou kiln are very similar. The times at that time are very similar caused the styles of  the two kilns are similar to the porcelain produced. However, Jizhou kiln is, after all, the kiln  mouth produced by the culture of the south. It has a very subtle gap in essence with the Cizhou  kiln in the north. Most of the porcelain in Jizhou kiln is more exquisite than that in Cizhou kiln,  because Jizhou kiln has attracted much attention since the Song Dynasty. In the popular situation,  the craftsmen and porcelain makers of Jizhou kiln are more careful and cautious. </p>
+  <p class='w3-center'>White-bellied Porcelain and Black and White Porcelain</p>
+  <p class='w3-center'>Then, apart from the emperor's customisation, there is another customisation in history that is  worthy of attention, that is, the advanced customisation of monks and big temples. Most of these  porcelains are black on the outside and white on the inside, and most of them are unearthed from  temple sites and noble tombs in Tang and Song Dynasties. From the Tang Dynasty to the Jin  Dynasty, these porcelains were fired at various kilns, among which the kilns in Gong County in  the Tang Dynasty and Ding Kiln in the Jin Dynasty in the Song Dynasty were the main ones. This  kind of artefacts, even those with “abbot” written on them, are enough to prove their status as  users and customisers. </p>
+  <p class='w3-center'>The bright colour contrast of white-bellied porcelain is the pioneering work of Song Dynasty  porcelain on the aesthetic level. There is no one before, and no one after. Only in the great era of  Song Dynasty can generate such aesthetic inspiration like white-bellied porcelain. White-bellied  porcelain production quantity is very small, and fine products are even rarer, especially tough to  get one. Among them, the best one is Dangyangyu kiln in Xiuwu. In terms of production  technology, Dangyangyu’s white-bellied works are first painted with black glaze, then the black  glaze inside and outside the mouth edge is scraped off with a bamboo knife, finally fired in a kiln  at high temperature. Apply white glaze along the mouth, and then re-burn in the furnace at low  temperature. The white glaze is extremely smooth and delicate. For high-grade tea cups, all are  glazed to the bottom, neatly cut the tires and stop the glaze in place, which is extremely skilful and 
+adept. The bottom foot is coated with fine tire-protecting glaze, which is usually oxidised to silver  grey, iron colour or black, showing the characteristics of iron feet. While the feet are trimmed,  refined decisively, it is cut cleanly and very handsome. However, for ordinary tea cups, half glaze  is generally applied, and no glaze or sauce colour glaze is applied. After the whole firing, apply  white glaze, scrape and glaze along the mouth edge, all in one go, one knife forming, never  sloppily. </p>
+  <p class='w3-center'>The specifications, grades, mouths and feet of tea cups in the Song Dynasty are extremely  important. High-end tea cups must have fine lip and foot treatment, and the white-bellied covering  process is also a way to try the fine lip treatment of high-end tea cups. The white-bellied porcelain  has the same name as the white-black porcelain. “Zi Su”, refers to black and white. “Zi” stands for  black and “Su” stands for white. “Zi” represents a monk, and “Su” represents a layman. “Zi Su”,  the original meaning is the collective name of monks and laymen. In the past, monks’ robes were  mostly black, while the ancient Indian layman wore white (plain) clothes, so the monk was  replaced by the monk, and the layman was replaced by the vegetarian. </p>
+  <p class='w3-center'>In fact, the frequent appearance of black and white is in line with the aesthetic concept at that  time. In the Song Dynasty, there were not only the contrast between black and white, but also  other decorative techniques such as inlaid gold and silver. At that time, it was a very fashionable  thing. It can also be said that it was the “trend culture” at that time. 
+This kind of black and white, and inlaid with gold and silver, forms a strong contrast in visual  sensitivity. This is unique in the history of Chinese porcelain. Obviously, the appearance of this  type of porcelain is different from others, and it is very special. It is precisely because of the small  population that the output is scarce. </p>
+  <p class='w3-center'>Jian Kiln</p>
+  <p class='w3-center'>Fujian's Jianzhan is well-known in China, Japan, Europe and the United States. This is due to  the Song Dynasty’s respect for the tea ceremony and its frequent trade with the outside world.  This is because in the Song Dynasty, the royal aristocrats loved the tea ceremony. After a series of  upward and downward moves, this behaviour became common. From princes and generals to  literati and poets, contending tea is an elegant thing. Jian Kiln’s Jianzhan in Fujian is a tea  ceremony utensil. In the Song Dynasty, tea ceremony utensils were various: some used gold and  silver wares as tea props, others used porcelain wares as tea props. 
+Jianzhan was fired in Jianyang District. Most of the cups are big in mouth and small in  bottom. Some are shaped like funnels. Most of them are shallow round feet. There are often  trimming knives (commonly known as chamfering) at the foot roots, and the plantar surface is  slightly oblique. A few are substantial (mainly small round bowls). They are simple in shape and  heavy in hand. Jianzhan is divided into four categories: opening, skimming, converging and  bundling, each of which is divided into large, medium and small. Small round bowls are classified  as small convergent bowls. Open bowl: the mouth is curled outwards, with sharp round lips,  oblique or micro-arc abdominal wall, shallow abdomen and adduction under abdomen. Shallow  circle foot: The shape is funnel-shaped, commonly known as “hat bowl”.</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/nrTNf4m.png" class="w3-hover-opacity" onclick="onClick(this)" alt='fig8'>
+        <p>Fig. 8</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/5NWhXVz.png" class="w3-hover-opacity" onclick="onClick(this)" alt='fig9'>
+        <p>Fig. 9</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/U8ONGoW.png" class="w3-hover-opacity" onclick="onClick(this)" alt='fig10'>
+        <p>Fig. 10</p>
+    </div>
+  </div>
+
+  <p class='w3-center'>The glaze on the mouth edge of Jianzhan is mostly dark fawn. Glaze water is thin above and  thick below. There is an inward round edge at the edge of the mouth, which is to produce more  traces of glaze accumulation when the glaze water flows, making the whole utensil more beautiful  and unique. Nearly one-third of the outer wall is not glazed, which is also a way to let glaze water 
+flow freely. It is also this technique that makes Jianzhan produce the so-called “teardrop” mark.  Jianzhan has a stocky and unsophisticated shape, natural and smooth lines, and is free and easy to  trim. At first glance, it gives people a sense of ancient meaning. </p>
+  <p class='w3-center'>Jianyang Kiln in the Song Dynasty is similar to the southern kilns like Jizhou Kiln, and the  reaction from fetal soil to enamel to mineral is very similar. Certainly, the maturity of kiln  construction is much earlier than that of Jizhou kiln. In the Northern Song Dynasty, when Jizhou  Kiln was still burning green and white porcelain and black glazed porcelain was just being  developed, the black glazed porcelain of the kiln was already very mature. Most documents  describing black glazed porcelain in the Northern Song Dynasty are also descriptions of Jianzhan,  for example, Song Huizong’s evaluation of Jianzhan in Daguan Tea Theory: “The color of the cup  is best green and black, and the one with the best jade hair is the top, so it is also necessary to pick  the colour of the tea.” For example, Su Shi’s Huishan Travel Notes wrote: “Raise a carbon fire to  boil this clear and sweet mountain spring water. Cook tea soup in the open space beside the trees.  By drinking all the tea soup in the tea cup at the south window, the colour and aroma of the tea  soup can be described as wonderful to the extreme.” Fan Zhongyan also wrote in The Song of  Contending Tea with Zhang Min: “The tea powder quickly grinded out with the small dragon and  phoenix group tea cake as expensive as gold is like green dust foam, which is put in the purple  jade ou burned in the kiln and brewed with boiling water, and the tea is like snowflakes, which is  very beautiful.” Cai Xiang’s Tea Record compares other porcelain with Jianzhan: “Others are thin  or purple. Not as good as Jianzhan.” Purple here should mean that black is not pure enough with  slight colour difference. Brown cup is easier to understand, which refers to brown rabbit hair. (Fig.  11 Rabbit Torch Open Cup from Jian Kiln in the Song Dynasty, Sotheby’s Auction Catalogue)</p>
+  <p class='w3-center'>These two Jianzhan are the tea cups that Sotheby’s got in the auction. It can be seen that these  two tea cups are rabbit torch cups, and both of them have traces of weeping. Both glazing stops at  the upper third of the lower foot. This is because artisans want glaze water to flow naturally to  form unique traces, which is also the unique feature of Jianzhann. 
+This Silver oil drop tea cup from Jian kiln basically meets all the characteristics of the kiln  cup, including glaze traces, patterns and fetal quality. The fetal soil of Jianzhan in the Song  Dynasty is made of local porcelain clay rich in iron. Therefore, it is heavy in hand and has obvious  pressing feel. At that time, the processing methods and tools were relatively modern and  backward, resulting in the large particles which could not be completely crushed in the fetal soil,  making it appear rough. Due to the influence of carbon monoxide in the kiln during the firing  process, the tire is purplish brown in colour, coarse and hard as iron slag. </p>
+  <p class='w3-center'>Ancient Chinese actually were fond of black, which even became a national colour in the Qin  Dynasty. Admittedly, colour is only part of the reason. People like black glazed porcelain mainly  because in the Song Dynasty, people’s aesthetic and philosophical ideas combined a practical  utensil, tea cups. This product, which integrates aesthetic and practical philosophy, has always  been imitated by others. It stood out from the crowd in the era when celadon and white porcelain  were in vogue and was unique, just like a colourful light in the history of porcelain.</p>
+
+</div>
+
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
