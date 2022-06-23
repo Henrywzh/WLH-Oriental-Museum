@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<title>WLH Museum</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://wlhmuseum.w3spaces.com/wlh.css">
+
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top colorDark">
+  <div class="w3-bar w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img id='logo' src='https://i.imgur.com/zfqNM0U.png'></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small word">
+      <a href="https://wlhmuseum.w3spaces.com/index.html#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> ARTICLE</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> ANALYSIS</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#photos" class="w3-bar-item w3-button"><i class="fa"><img src='https://www.pngplay.com/wp-content/uploads/13/Black-And-White-Instagram-Logo-PNG-Photos.png' style='width:20px'></i> PHOTOS</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#pricing" onclick="w3_close()" class="w3-bar-item w3-button">ANALYSIS</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#photos" onclick="w3_close()" class="w3-bar-item w3-button">PHOTOS</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Work Section -->
+<div class="w3-container colorDark word" style="padding:128px 16px" id="work">
+  <h3 class="w3-center colorGold">Change in Profit</h3>
+  <p class='w3-center w3-large'>Henry Wu</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <img src="https://i.imgur.com/CU7k2Tt.png" class="w3-hover-opacity" onclick="onClick(this)" style="display: block; margin-left: auto; margin-right: auto">
+  </div>
+
+  <p class="w3-center">The line graph compares the change in profit of various time of artifacts from 2000 to 2017. Overall, there were significant fluctuations in the profits for all Chinese artifacts.</p>
+  <p class='w3-center'>In terms of ancient artifacts, the percentage change in profits varied the most. It peaked at over 80% in 2004 and reached a bottom of under -40% in 2006. On the other hand, artifacts from the late Qing Dynasty and from the modern showed a similar trend. Both of them reached a peak of around 60% in 2004 and went to a minimum of -40% and -20% respectively in 2006. Interestingly, between 2008 and 2011, there was a steady rise in profit but after that, the profits remained low.</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <img src="https://i.imgur.com/v2XG8Tq.png" class="w3-hover-opacity" onclick="onClick(this)" style="display: block; margin-left: auto; margin-right: auto">
+  </div>
+
+  <p class="w3-center">The second line graph gives information about the profit changes for different prices of Chinese artifacts. Clearly, the patterns were extremely similar but the artifact with a higher price can earn a significant amount of money occasionally.</p>
+  <p class='w3-center'>A closer look at the graph shows that the profit for the top 25% of the artifacts reached a peak of over 300% between 2003 and 2004. Similarly, the bottom 25% also reached the highest point at over 100% during the same period. Between 2008 and 2011, the profits grew gradually for all artifacts and after 2011, there were no big changes in profit.</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <img src="https://i.imgur.com/VKIP1G8.png" class="w3-hover-opacity" onclick="onClick(this)" style="display: block; margin-left: auto; margin-right: auto">
+  </div>
+
+  <p class="w3-center">The last graph shows the change in profit for artifacts sold in different locations, including Beijing, Hongkong, Newyork & London, and globally. In general, Beijing, Hong Kong, and Global artifacts had the strongest correlation. </p>
+  <p class='w3-center'>Shockingly, the profit was very high in 2003 and 2005 for artifacts sold in Newyork or London (around 600% and over 500% respectively). In comparison, although there was a rise in profit for other locations during the same period, it was less significant. Between 2008 and 2011, the graph shows an increase in profits, even reaching up to 100% for Hong Kong, Newyork, and London. After that, the change in profit remained relatively stable.</p>
+
+</div>
+
+<script src="https://wlhmuseum.w3spaces.com/wlh.js"></script>
+</body>
+</html>
