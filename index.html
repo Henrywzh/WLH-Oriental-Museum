@@ -6,146 +6,18 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6,p {font-family: "Raleway", sans-serif}
-
-body, html {
-  height: 100%;
-  line-height: 1.8;
-  font-family: Verdana, sans-serif; 
-  margin:0;
-}
-
-/* Full height image header */
-.bgimg-1 {
-  background-position: center;
-  background-size: cover;
-  background-image: url("https://i.imgur.com/FgFqjvS.jpg");
-  min-height: 100%;
-}
-
-.w3-hover-opacity {
-  width: 100%;
-  height: 250px;
-  max-width: 400px;
-  min-width: 200px;
-  object-fit: cover;
-}
-
-.w3-bar .w3-button {
-  padding: 16px;
-}
-
-#logo {
-  height: 45px;
-  width: 55px;
-  margin: -8px;
-}
-
-.colorDark {
-  background-color: rgb(51,51,51);
-}
-
-.colorGold {
-  color: rgb(182,166,145)
-}
-
-.word {
-  color: white;
-}
-
-.box{
-  width: 1200px;
-  border: 1px solid #aaa;
-  padding: 20px 10px;
-  margin: 100px auto;
-}
-
-* {box-sizing: border-box}
-/* body {} */
-.mySlides {display: none}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 400px;
-  position: relative;
-  margin: auto;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-.active {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
-</style>
+<link rel="stylesheet" href="https://wlhmuseum.w3spaces.com/wlh.css">
 
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top colorDark">
   <div class="w3-bar w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide"><img id='logo' src='https://i.imgur.com/lkNZZ8N.jpg'></a>
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img id='logo' src='https://i.imgur.com/zfqNM0U.png'></a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small word">
       <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> ARTICLE</a>
-      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
+      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> ANALYSIS</a>
       <a href="#photos" class="w3-bar-item w3-button"><i class="fa"><img src='https://www.pngplay.com/wp-content/uploads/13/Black-And-White-Instagram-Logo-PNG-Photos.png' style='width:20px'></i> PHOTOS</a>
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
     </div>
@@ -161,7 +33,7 @@ body, html {
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
   <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">ANALYSIS</a>
   <a href="#photos" onclick="w3_close()" class="w3-bar-item w3-button">PHOTOS</a>
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
@@ -192,6 +64,9 @@ body, html {
     <div class="w3-col l3 m6"><p>Black Glaze - Video</p>
       <a href='https://youtu.be/DLhsNdBtxFM'><img src="https://i.imgur.com/oGr0nHy.jpg" class="w3-hover-opacity" alt="Black Glaze"></a>
     </div>
+    <div class="w3-col l3 m6"><p>Introduction To LiangZhu Culture</p>
+      <a href='https://wlhmuseum.w3spaces.com/liangzhu.html'><img src="https://i.imgur.com/32XHxb0.jpg" class="w3-hover-opacity" alt="LiangZhu"></a>
+    </div>
     <div class="w3-col l3 m6"><p>研山铭(yan shan ming) - Video</p>
       <a href='https://youtu.be/oxj7w1EkFdg'><img src="https://i.imgur.com/FgFqjvS.jpg" class="w3-hover-opacity" alt="研山铭yan shan ming"></a>
     </div>
@@ -209,10 +84,22 @@ body, html {
 
 <!-- Pricing Section -->
 <div class="w3-container word colorDark" style="padding:128px 16px" id="pricing">
-  <h3 class="w3-center colorGold">PRICING</h3>
-  <p class="w3-center w3-large">Recent Analysis</p>
+  <h3 class="w3-center colorGold">ANALYSIS</h3>
+  <p class="w3-center w3-large">Graphs and Visualisations</p>
 
   <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6"><p>Chinese Artifacts Industry</p>
+      <a href="https://wlhmuseum.w3spaces.com/graph1.html"><img src="https://i.imgur.com/lgZ3Rfz.png" class="w3-hover-opacity" alt="Chinese Artifacts Industry"></a>
+    </div>
+    <div class="w3-col l3 m6"><p>Total Price</p>
+      <a href="https://wlhmuseum.w3spaces.com/graph2.html"><img src="https://i.imgur.com/JYqW9Or.png" class="w3-hover-opacity" alt="Total Price"></a>
+    </div>
+    <div class="w3-col l3 m6"><p>Transactions</p>
+      <a href="https://wlhmuseum.w3spaces.com/graph3.html"><img src="https://i.imgur.com/G6yv2jX.png" class="w3-hover-opacity" alt="Transactions"></a>
+    </div>
+    <div class="w3-col l3 m6"><p>Average Price</p>
+      <a href="https://wlhmuseum.w3spaces.com/graph4.html"><img src="https://i.imgur.com/dENQNBD.png" class="w3-hover-opacity" alt="Average Price"></a>
+    </div>
     <div class="w3-col l3 m6"><p>The Price of Muye Cup</p>
       <img src="https://i.imgur.com/ZFl7iU9.png" onclick="onClick(this)" class="w3-hover-opacity" alt="When we started looking at samples of Muye cups in different collections and auction results, we realised that there are many levels of qualities of different Muye cups, thus their price varies a lot. Hence, we included two different levels of Muye cups, differentiated by their quality, one kind with relatively better quality (blue line) and the other with relatively worse quality (yellow line).
 
@@ -241,19 +128,18 @@ In addition, we realised that the price of bronze without inscriptions on them w
 
 ——  By Hau Lam Lo">
     </div>
-    <div class="w3-col l3 m6"><p>Chinese Artifacts Industry</p>
-      <a href="https://docs.google.com/document/d/1hZwBRwvnqTJHPniew2C1JnQPSNSY-IP3QaTYTrM4wsQ/edit?usp=sharing"><img src="https://i.imgur.com/lgZ3Rfz.png" class="w3-hover-opacity" alt="Chinese Artifacts Industry"></a>
+    <div class="w3-col l3 m6"><p>2020 Comparison</p>
+      <a href="https://wlhmuseum.w3spaces.com/graph5.html"><img src="https://i.imgur.com/vxwXsJx.png" class="w3-hover-opacity" alt="2020 Comparison"></a>
     </div>
-    <div class="w3-col l3 m6"><p>Total Price</p>
-      <a href="https://docs.google.com/document/d/1FzvivHK0aeumLb3EnCmUMs3NOK6XkojJIrcfLCRLGPI/edit?usp=sharing"><img src="https://i.imgur.com/JYqW9Or.png" class="w3-hover-opacity" alt="Chinese Artifacts Industry"></a>
+    <div class="w3-col l3 m6"><p>Top 10 Companies</p>
+      <a href="https://wlhmuseum.w3spaces.com/graph6.html"><img src="https://i.imgur.com/N1bq3zk.png" class="w3-hover-opacity" alt="Top 10 Companies"></a>
     </div>
-    <div class="w3-col l3 m6"><p>Transactions</p>
-      <a href="https://docs.google.com/document/d/1xXTi37apkB-6fZvIbDqcAnYvRtuniHDPcsey1Ro0ziE/edit?usp=sharing"><img src="https://i.imgur.com/G6yv2jX.png" class="w3-hover-opacity" alt="Chinese Artifacts Industry"></a>
+    <div class="w3-col l3 m6"><p>Hedonic Price Index</p>
+      <a href="https://wlhmuseum.w3spaces.com/graph7.html"><img src="https://i.imgur.com/Pz8vmD1.png" class="w3-hover-opacity" alt="Hedonic Price Index"></a>
     </div>
-    <div class="w3-col l3 m6"><p>Average Price</p>
-      <a href="https://docs.google.com/document/d/1X_9eG74TEQIYyN_oiuu85hEd9kekNeGj0Y30aB4mTto/edit?usp=sharing"><img src="https://i.imgur.com/dENQNBD.png" class="w3-hover-opacity" alt="Chinese Artifacts Industry"></a>
-    </div>
-
+    <div class="w3-col l3 m6"><p>Profit Changes</p>
+      <a href="https://wlhmuseum.w3spaces.com/graph7.html"><img src="https://i.imgur.com/OPgOTub.png" class="w3-hover-opacity" alt="Profit changes for different artifacts"></a>
+  </div>
 </div>
 
 
@@ -263,71 +149,52 @@ In addition, we realised that the price of bronze without inscriptions on them w
   <p class="w3-center w3-large">Photos of Different artifacts</p>
 
   <div class="w3-row-padding" style="margin-top:64px">
-    <div class="slideshow-container">
-
-    <div class="mySlides fade">
-      <div class="numbertext">1</div>
-      <img src="https://i.imgur.com/oGr0nHy.jpg" style="width:100%">
+    <div class="w3-col l3 m6">
+      <img src="https://i.imgur.com/oGr0nHy.jpg" class="w3-hover-opacity" onclick="onClick(this)">
     </div>
 
-    <div class="mySlides fade">
-      <div class="numbertext">2</div>
-      <img src="https://i.imgur.com/7sIjqOm.jpg" style="width:100%">
+    <div class="w3-col l3 m6">
+      <img src="https://i.imgur.com/7sIjqOm.jpg" class="w3-hover-opacity" onclick="onClick(this)">
     </div>
 
-    <div class="mySlides fade">
-      <div class="numbertext">3</div>
-      <img src="https://i.imgur.com/4zVBAjJ.jpg" style="width:100%">
+    <div class="w3-col l3 m6">
+      <img src="https://i.imgur.com/4zVBAjJ.jpg" class="w3-hover-opacity" onclick="onClick(this)">
     </div>
 
-    <div class="mySlides fade">
-      <div class="numbertext">4</div>
-      <img src="https://i.imgur.com/cdKng0Y.jpg" style="width:100%">
+    <div class="w3-col l3 m6">
+      <img src="https://i.imgur.com/cdKng0Y.jpg" class="w3-hover-opacity" onclick="onClick(this)">
     </div>
 
-        <div class="mySlides fade">
-      <div class="numbertext">5</div>
-      <img src="https://i.imgur.com/wTt6a3n.jpg" style="width:100%">
+    <div class="w3-col l3 m6">
+      <img src="https://i.imgur.com/wTt6a3n.jpg" class="w3-hover-opacity" onclick="onClick(this)">
     </div>
 
-    <div class="mySlides fade">
-      <div class="numbertext">6</div>
-      <img src="https://i.imgur.com/dYL2IM2.jpg" style="width:100%">
+    <div class="w3-col l3 m6">
+      <img src="https://i.imgur.com/dYL2IM2.jpg" class="w3-hover-opacity" onclick="onClick(this)">
     </div>
 
-    <div class="mySlides fade">
-      <div class="numbertext">7</div>
-      <img src="https://i.imgur.com/Kl92ja7.jpg" style="width:100%">
+    <div class="w3-col l3 m6">
+      <img src="https://i.imgur.com/Kl92ja7.jpg" class="w3-hover-opacity" onclick="onClick(this)">
     </div>
 
-    <div class="mySlides fade">
-      <div class="numbertext">8</div>
-      <img src="https://i.imgur.com/QUm55qf.jpg" style="width:100%">
+    <div class="w3-col l3 m6">
+      <img src="https://i.imgur.com/QUm55qf.jpg" class="w3-hover-opacity" onclick="onClick(this)">
     </div>
 
-        <div class="mySlides fade">
-      <div class="numbertext">9</div>
-      <img src="https://i.imgur.com/TC6sZPM.jpg" style="width:100%">
+    <div class="w3-col l3 m6">
+      <img src="https://i.imgur.com/TC6sZPM.jpg" class="w3-hover-opacity" onclick="onClick(this)">
     </div>
 
-    <div class="mySlides fade">
-      <div class="numbertext">10</div>
-      <img src="https://i.imgur.com/6T3zrW4.jpg" style="width:100%">
+    <div class="w3-col l3 m6">
+      <img src="https://i.imgur.com/6T3zrW4.jpg" class="w3-hover-opacity" onclick="onClick(this)">
     </div>
 
-    <div class="mySlides fade">
-      <div class="numbertext">11</div>
-      <img src="https://i.imgur.com/RWnaYRb.jpg" style="width:100%">
+    <div class="w3-col l3 m6">
+      <img src="https://i.imgur.com/RWnaYRb.jpg" class="w3-hover-opacity" onclick="onClick(this)">
     </div>
 
-    <div class="mySlides fade">
-      <div class="numbertext">12</div>
-      <img src="https://i.imgur.com/0bdL4mF.jpg" style="width:100%">
-    </div>
-
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
+    <div class="w3-col l3 m6">
+      <img src="https://i.imgur.com/0bdL4mF.jpg" class="w3-hover-opacity" onclick="onClick(this)">
     </div>
 </div>
 
@@ -359,56 +226,7 @@ In addition, we realised that the price of bronze without inscriptions on them w
   </div>
 </div>
 
-
- 
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-
-// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-  } else {
-    mySidebar.style.display = 'block';
-  }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-}
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  slides[slideIndex-1].style.display = "block";  
-}
-</script>
+<script src="https://wlhmuseum.w3spaces.com/wlh.js"></script>
 
 </body>
 </html>
