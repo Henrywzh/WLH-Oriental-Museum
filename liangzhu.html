@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<title>WLH Museum</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://wlhmuseum.w3spaces.com/wlh.css">
+
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top colorDark">
+  <div class="w3-bar w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img id='logo' src='https://i.imgur.com/zfqNM0U.png'></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small word">
+      <a href="https://wlhmuseum.w3spaces.com/index.html#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> ARTICLE</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> ANALYSIS</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#photos" class="w3-bar-item w3-button"><i class="fa"><img src='https://www.pngplay.com/wp-content/uploads/13/Black-And-White-Instagram-Logo-PNG-Photos.png' style='width:20px'></i> PHOTOS</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#pricing" onclick="w3_close()" class="w3-bar-item w3-button">ANALYSIS</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#photos" onclick="w3_close()" class="w3-bar-item w3-button">PHOTOS</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Work Section -->
+<div class="w3-container colorDark word" style="padding:128px 16px" id="work">
+  <h3 class="w3-center colorGold">A Brief Introduction To LiangZhu Culture</h3>
+  <p class='w3-center w3-large'>Lo Hau Lam</p>
+  <p class="w3-center">The LiangZhu culture (3300–2300 BC) was found in 1936 as a ruin site in north-east ZheJiang and south-east JiangSu, China. LiangZhu is the last Neolithic jade culture in the Yangtze River of China. The culture was highly stratified, as jade, silk, ivory, and lacquer artifacts were found exclusively in elite burials, while pottery was more commonly found in the burial plots of poorer individuals. This class division indicates that the Liangzhu period was an early state, symbolised by the clear distinction between social classes in funeral structures. A pan-regional urban center had emerged at the Liangzhu city site, and elite groups from this site presided over the local centers. The Liangzhu culture was extraordinarily influential, and its sphere of influence reached as far north as Shanxi and south as Guangdong. The primary Liangzhu site was perhaps among the oldest Neolithic sites in East Asia that would be considered a state society. This essay will be mainly focused on the religious aspect of LiangZhu culture. </p>
+  
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/32XHxb0.jpg" class="w3-hover-opacity" onclick="onClick(this)" alt='Figure 1: the typical jade Cong found on LiangZhu site'>
+        <p>Fig. 1</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/LYoAKbk.jpg" class="w3-hover-opacity" onclick="onClick(this)" alt='Figure 2: Discovery of the dig on one of the sites in KunShan, JiangSu'>
+        <p>Fig. 2</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/aRHQnb5.jpg" class="w3-hover-opacity" onclick="onClick(this)" alt='Figure 3: a carved totem of the LiangZhu culture on Jade artifacts'>
+        <p>Fig. 3</p>
+    </div>
+  </div>
+
+  <p class="w3-center">Religion</p>
+  <p class='w3-center'>The symbol is a human-animal unity on the jade of the Liang Zhu is one of the earliest Chinese totems of the king's elephant and one of the most elaborate and exquisite of its time. Used as a symbol for shamans at the time, it was used both to ward off evil spirits and to symbolise power and authority. Any jade vessel with this symbol was generally a symbol of the power of the kings of the time, a symbol of power and prestige.</p>
+  <p class='w3-center'>Nevertheless, besides the totem worship, a neolithic altar from the Liangzhu culture, excavated at Yaoshan in Zhejiang, demonstrates that religious structures were elaborate and made of carefully positioned piles of stones and rock walls: this indicates that religion was of considerable importance. The altar has three levels, the highest being a rammed earth platform. Three additional platforms were paved with cobblestones. There are the remains of a stone wall. On the altar are twelve graves in two rows.</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/DFX8B5c.png" class="w3-hover-opacity" onclick="onClick(this)" alt='Figure 4: a black and white version of the totem of LiangZhu culture'>
+        <p>Fig. 4</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/FVGTNPP.png" class="w3-hover-opacity" onclick="onClick(this)" alt='Figure 5: Jade crown-like ornamentation, Yuhang, Zhejiang'>
+        <p>Fig. 5</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/TkrbODQ.png" class="w3-hover-opacity" onclick="onClick(this)" alt='Figure 6: Jade plaques decorating, Yuhang, Zhejiang'>
+        <p>Fig. 6</p>
+    </div>
+  </div>
+
+    <p class="w3-center">Jade</p>
+    <p class='w3-center'>The jade from this culture is characterised by finely worked large ritual jades, commonly incised with their taotie motif and emblem (figure 3 & 4). There are nine characteristics of jades found in the LiangZhu site. First, The jade of the LiangZhu culture is deep and straight, with smooth and polished edges. Second, the LiangZhu culture jade folding line is deep and wide, and the bottom of the line is slightly curved. Third, the LiangZhu culture jade ring line has two processing methods: hand-ground joint and pipe drill rotary grinding, the former line mark shallow and thin, line edge more "hairy ball". Also, The LiangZhu culture jade rays are fine and compact, with noticeable continuity marks. In addition, The jades of the LiangZhu culture are often carved in shallow relief, using the technique of reduced ground planning to highlight the central motifs and enhance the subject's expression. As well as, jade from the LiangZhu culture often has 'saw marks.' LiangZhu jade is carved by hollowing out a small hole in the jade piece and then sawing off the excess with a "saw," commonly known as "engraving," also known as "pulling," using a string-like pulling bar like a toothless saw blade, which leaves a pulling mark on the surface of the hollowing hole. The string-like puller is like a toothless saw blade, leaving a tug mark on the surface of the hollowing hole. Besides, the jade of the LiangZhu culture is ornately decorated with a wide range of newly created patterns, including the animal-face pattern of the gods, the silk-binding pattern, the silk-stringing pattern, the Chi-yu pattern, the standing man pattern, the animal-eye bird pattern, the cloud and thunder pattern, and the Pu Cao pattern. Lastly, LiangZhu culture jade pays special attention to the eye shape, "LiangZhu eyes" compared to the Red Mountain culture jade "line carved eyes," in the carving details are more colourful. "In addition to single circles and heavy circles, the LiangZhu eyes also appear in the form of cirrus, rhombus, ears, and short linear orbits.</p>
+    <p class="w3-center">The most exemplary artifacts from the culture were its Cong (cylinders). The largest Cong discovered weighed 3.5 kg. Bi (discs) and Yue axes (ceremonial axes) were also found. Jade pendants were also found, with images of small birds, turtles, and fish. Many LiangZhu jade artifacts had a white milky bone-like aspect due to its tremolite rock origin and influence of water-based fluids at the burial sites, although jade made from actinolite and serpentine were also commonly found. Most of LiangZhu's contemporaries have some jades, but 90% of all the Cong and bi jades recovered, and by far the best in quality, are from Liangzhu sites.[22] Jade artifacts unearthed from Liangzhu sites are said to have been influential on the development of other neolithic cultures in China: "The impactful legacy of Liangzhu Culture is seen in Longshan in Shandong, Taosi site in Shanxi, Qijia in Ganqing and many other sites in northern Shaanxi, where Cong tubes, bi disks and other jade objects reminiscent of Liangzhu Culture have been unearthed."[23][24] Liangzhu jade work is also said to have had a lasting influence on ritual objects in later periods of Chinese culture. The Liangzhu "ancient city" or Liangzhu site-complex controlled the best jade products, but less important centers also produced elite crafts, which led researchers to believe the Liangzhu culture was not a simple pyramid structure society in terms of status levels. Many minor centers had access to their jade (nephrite). However, the Liangzhu elites at the ancient city communicated and exchanged goods with elites from other parts of the Liangzhu world (and also in different regions of Longshan-era China) and set the criteria of what jade should look like. The Liangzhu did not seem to be importers of jade, even though they did export it extensively.</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/6zUe0lS.png" class="w3-hover-opacity" onclick="onClick(this)" alt='Figure 7: Jade necklace decorated by the totem of LaingZhu'>
+        <p>Fig. 7</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/pkCD0Be.png" class="w3-hover-opacity" onclick="onClick(this)" alt='Figure 8: Jade semi-circular ornaments, Yuhang, Zhejiang'>
+        <p>Fig. 8</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/RMNjMHm.png" class="w3-hover-opacity" onclick="onClick(this)" alt='Figure 9: Jade with lid in columnar form Yuhang, Zhejiang'>
+        <p>Fig. 9</p>
+    </div>
+    <div class="w3-col l3 m6">
+        <img src="https://i.imgur.com/JCEOfAr.jpg" class="w3-hover-opacity" onclick="onClick(this)" alt='Figure 10: extraordinary jade Cong with Taotie pattern, Yuhang, Jiangsu'>
+        <p>Fig. 10</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://wlhmuseum.w3spaces.com/wlh.js"></script>
+</body>
