@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<title>WLH Museum</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://wlhmuseum.w3spaces.com/wlh.css">
+
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top colorDark">
+  <div class="w3-bar w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img id='logo' src='https://i.imgur.com/zfqNM0U.png'></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small word">
+      <a href="https://wlhmuseum.w3spaces.com/index.html#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> ARTICLE</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> ANALYSIS</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#photos" class="w3-bar-item w3-button"><i class="fa"><img src='https://www.pngplay.com/wp-content/uploads/13/Black-And-White-Instagram-Logo-PNG-Photos.png' style='width:20px'></i> PHOTOS</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#pricing" onclick="w3_close()" class="w3-bar-item w3-button">ANALYSIS</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#photos" onclick="w3_close()" class="w3-bar-item w3-button">PHOTOS</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Work Section -->
+<div class="w3-container colorDark word" style="padding:128px 16px" id="work">
+  <h3 class="w3-center colorGold">2020 Top 10 Companies</h3>
+  <p class='w3-center w3-large'>Henry Wu</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <img src="https://i.imgur.com/N1bq3zk.png" class="w3-hover-opacity" onclick="onClick(this)" style="display: block; margin-left: auto; margin-right: auto">
+  </div>
+
+  <p class="w3-center">We compared the top 10 companies in the Chinese artifact industry in 2020. Overall, most of the top companies were from Beijing or Hong Kong.</p>
+  <p class='w3-center'>The pie chart shows that Beijing Poly was the biggest company in terms of the total price(20%). The second biggest company was China Guardian with 15.8% while Sotheby’s(HK) was just behind at 12.4%. Beijing Yongle and Beijing Huayi each accounted for 11.75 and 11.1% respectively. Finally, the remaining five were Xiling Yinshe(8.4%), Christie’s(HK)(8.2%), Beijing Rongbao(5.3%), Zhongmao Shengjia(4.3%), and Shanghai Jiahe(3%).</p>
+  <p class='w3-center'>A more detailed look at the bar chart shows the number of transactions for the ten companies in 2020. Firstly, although Xiling Yinshe had the most transactions in 2020(over 30000), its total price only ranked 6th. China Guardian made the second highest number of transactions at around 22500. After that, it was Beijing Poly and ZHongmao Shengjia at 10000 each. Beijing Rongbao made approximately 7500 transactions in 2020 while Shanghai Jiahe was just below 5000. Last but not least, Sotheby’s(HK), Beijing Yongle, Beijing Huayi, and Christie’s(HK) were below 2500. In conclusion, the number of transactions made was not related to the total price.</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <img src="https://i.imgur.com/GnZ0UTN.png" class="w3-hover-opacity" onclick="onClick(this)" style="display: block; margin-left: auto; margin-right: auto">
+  </div>
+
+  <p class="w3-center">The bar chart gives information about the transaction rate of the top 10 companies in 2020. In general, most of the companies had a transaction rate higher than 70%.</p>
+  <p class='w3-center'>A close look at the graph shows that XIling Yinshe was the highest in terms of transaction rate(90%) while China Guardian was just slightly behind(86%). Shanghai Jiahe, Zhongmao Shengjia, and Sotheby’s(HK) were also relatively high(80%, 83%, and 80% respectively). For Beijing Rongbao, Christie’s(HK), Beijing Huayi, and Beijing Poly, the transaction rates were a bit lower(72%, 74%, 73%, 75%). Lastly, Beijing Yongle had the lowest transaction rate at 64%.</p>
+  <p class='w3-center'>To conclude, most of the companies had very high transaction rate, however, this does not mean that transaction rate is related to the total price.</p>
+
+</div>
+
+<script src="https://wlhmuseum.w3spaces.com/wlh.js"></script>
+</body>
+</html>
