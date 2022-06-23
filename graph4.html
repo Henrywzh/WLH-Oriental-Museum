@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<title>WLH Museum</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://wlhmuseum.w3spaces.com/wlh.css">
+
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top colorDark">
+  <div class="w3-bar w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img id='logo' src='https://i.imgur.com/zfqNM0U.png'></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small word">
+      <a href="https://wlhmuseum.w3spaces.com/index.html#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> ARTICLE</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> ANALYSIS</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#photos" class="w3-bar-item w3-button"><i class="fa"><img src='https://www.pngplay.com/wp-content/uploads/13/Black-And-White-Instagram-Logo-PNG-Photos.png' style='width:20px'></i> PHOTOS</a>
+      <a href="https://wlhmuseum.w3spaces.com/index.html#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#pricing" onclick="w3_close()" class="w3-bar-item w3-button">ANALYSIS</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#photos" onclick="w3_close()" class="w3-bar-item w3-button">PHOTOS</a>
+  <a href="https://wlhmuseum.w3spaces.com/index.html#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Work Section -->
+<div class="w3-container colorDark word" style="padding:128px 16px" id="work">
+  <h3 class="w3-center colorGold">Average Price</h3>
+  <p class='w3-center w3-large'>Henry Wu</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <img src="https://i.imgur.com/dENQNBD.png" class="w3-hover-opacity" onclick="onClick(this)" style="display: block; margin-left: auto; margin-right: auto">
+  </div>
+
+  <p class="w3-center">The line graph presents information about the variation in the average price of artifacts in mainland China between 2013 and 2020. As you can see, the general mean price went up steadily from 2013 to 2017($17000 to $21000). Yet, after 2017, the price dropped to a bottom of $15000 in 2019. Then, it increased slightly to $18000 in 2020.</p>
+  <p class='w3-center'>In terms of the mean price of oil paints & modern arts, there was a sustained rise from $34000 to $47000 between 2013 and 2017. After that, the price fell slightly to $42000 in 2018 but went up significantly to over $55000 by the end of 2020. On the other hand, the average price of calligraphy & painting also rose gradually between 2013 and 2017($24000 to $33000). However, during the next two years, the price fell back to the original 2017 level. Finally, it increased to $33000 in 2020.</p>
+  <p class='w3-center'>A more detailed look at the mean price of ceramics shows that it remained very stable over the period. In 2013, the price was around $15000, and in 2017, it reached a peak of $19000 but then went back to $14000 in 2020. Last but not least, the mean price of ancient books grew slightly from $3400 to $5600 over the period.</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <img src="https://i.imgur.com/craFzxV.png" class="w3-hover-opacity" onclick="onClick(this)" style="display: block; margin-left: auto; margin-right: auto">
+  </div>
+
+  <p class="w3-center">The second graph shows the change in the mean price of oversea Chinese artifacts. Overall, the total mean price didn’t change a lot over the period, but there were some fluctuations in the price of specific types of artifacts.</p>
+  <p class='w3-center'>Clearly, oil paints & modern arts were the most expensive on average. The mean price increased significantly and peaked at $240000 in 2018, after that, it remained relatively stable at around this value. In comparison, there were large fluctuations in the mean price of ancient books between $80000 and $8000 from 2013 to 2020. Surprisingly, the average price of other types of artifacts rose dramatically to $280000 in 2017 while in other years, the price remained low.</p>
+  <p class='w3-center'>A closer look at the line graph shows that the trending price of calligraphy & painting, and ceramics were very similar. They all increased in 2017 ($88000 for calligraphy & painting and $ 36000 for ceramics) and decreased between 2017 and 2020 ($67000 and $21000 respectively). </p>
+
+</div>
+
+<script src="https://wlhmuseum.w3spaces.com/wlh.js"></script>
+</body>
+</html>
