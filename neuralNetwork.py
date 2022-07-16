@@ -103,3 +103,29 @@ Iteration: 1000 / 1000
 74.352%
 Accuracy: 73.190%
 """
+
+""" Using Adagrad:
+Iteration: 0 / 1000
+12.708%
+Iteration: 100 / 1000
+76.598%
+Iteration: 200 / 1000
+80.272%
+Iteration: 300 / 1000
+81.657%
+Iteration: 400 / 1000
+82.447%
+Iteration: 500 / 1000
+83.075%
+Iteration: 600 / 1000
+83.523%
+Iteration: 700 / 1000
+83.863%
+Iteration: 800 / 1000
+84.153%
+Iteration: 900 / 1000
+84.362%
+Iteration: 1000 / 1000
+84.608%
+Accuracy: 83.100%
+"""
