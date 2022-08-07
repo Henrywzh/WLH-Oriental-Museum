@@ -1,43 +1,18 @@
 # ---- Digits ----
 """ Using Momentum update:
-Iteration: 0 / 1000
-14.587%
-Iteration: 100 / 1000
-83.735%
-Iteration: 200 / 1000
-88.638%
-Iteration: 300 / 1000
-90.445%
-Iteration: 400 / 1000
-91.337%
-Iteration: 500 / 1000
-91.992%
-Iteration: 600 / 1000
-92.392%
-Iteration: 700 / 1000
-92.648%
-Iteration: 800 / 1000
-92.880%
-Iteration: 900 / 1000
-93.128%
-Iteration: 1000 / 1000
-93.285%
-Accuracy: 93.040%
-
-
 Iteration: 0 / 500
-8.557%
+13.750%
 Iteration: 100 / 500
-89.977%
+89.822%
 Iteration: 200 / 500
-91.538%
+91.772%
 Iteration: 300 / 500
-92.065%
+92.520%
 Iteration: 400 / 500
-92.428%
+92.918%
 Iteration: 500 / 500
-92.685%
-Accuracy: 92.360%
+93.143%
+Accuracy: 93.040%
 """
 
 """ Using Ordinary gradient descent:
