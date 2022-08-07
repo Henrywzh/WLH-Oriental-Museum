@@ -1,6 +1,8 @@
 from tensorflow import keras
 import numpy as np
 import math
+import matplotlib.pyplot as plt
+import random
 
 class Activation:
      def sigmoid(self, x):
@@ -61,7 +63,7 @@ class Neuron:
           return dw1, db1, dw2, db2
 
      def momentumDescent(self, x, y, learningRate, iterations, momentum):
-          size, m = x.shape
+          _, m = x.shape
           w1, b1, w2, b2 = self.parameters()
           vw1 = np.zeros((10, 784))
           vb1 = np.zeros((10, 1))
@@ -73,9 +75,9 @@ class Neuron:
                dw1, db1, dw2, db2 = self.backward(x, y, a1, a2, w2, z1, m)
 
                vw1 = momentum * vw1 - learningRate * dw1
-               vb1 = momentum * vb1 + learningRate * np.reshape(db1, (10,1))
+               vb1 = momentum * vb1 - learningRate * np.reshape(db1, (10,1))
                vw2 = momentum * vw2 - learningRate * dw2
-               vb2 = momentum * vb2 + learningRate * np.reshape(db2, (10,1))
+               vb2 = momentum * vb2 - learningRate * np.reshape(db2, (10,1))
 
                w1 += vw1
                b1 += vb1
@@ -142,7 +144,29 @@ class Neuron:
           return np.argmax(a2, 0)
 
      def accuracy(self, predictions, y):
-          return np.sum(predictions == y)/y.size
+          return np.sum(predictions == y) / y.size
+
+class Recognition:
+     def guessing(self, x, w1 ,b1, w2, b2):
+          ai = Neuron()
+          _, _, _, A2 = ai.forward(x, w1, b1, w2, b2)
+          predict = ai.predictions(A2)
+          return predict
+
+     def testing(self, x, w1, b1, w2, b2):
+          fig, ax = plt.subplots(3,3)
+          for i in range(3):
+               for j in range(3):
+                    index = random.randint(0, 10000)
+                    image = x[:, index, None]
+                    guess = self.guessing(image, w1, b1, w2, b2)
+
+                    image = image.reshape((28, 28))
+                    ax[i,j].set_ylabel(f'Predicts: {guess[0]}')
+                    ax[i,j].imshow(image)
+                    ax[i,j].grid(False)
+          fig.colorbar(ax[0,0].imshow(image), ax=ax, orientation='horizontal')
+          plt.show()
 
 if __name__ == '__main__':
      data1 = keras.datasets.mnist
@@ -155,9 +179,9 @@ if __name__ == '__main__':
      testX = testX.reshape(testX.shape[0], columns * rows).T  / 255
 
      ai = Neuron()
-     learningRate = 0.04
-     iterations = 1000
-     momentum = 0.95
+     learningRate = 0.05
+     iterations = 500
+     momentum = 0.9
 
      # w1, b1, w2, b2 = ai.gradientDescent(trainX, trainY, learningRate, iterations)
      w1, b1, w2, b2 = ai.momentumDescent(trainX, trainY, learningRate, iterations, momentum)
@@ -166,5 +190,6 @@ if __name__ == '__main__':
      _, _, _, a2 = ai.forward(testX, w1, b1, w2, b2)
      prediction = ai.predictions(a2)
      print(f'Accuracy: {ai.accuracy(prediction, testY):.3%}')
-     
-     
+
+     OCR = Recognition()
+     OCR.testing(testX, w1, b1, w2, b2)
