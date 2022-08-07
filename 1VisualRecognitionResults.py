@@ -23,6 +23,21 @@ Iteration: 900 / 1000
 Iteration: 1000 / 1000
 93.285%
 Accuracy: 93.040%
+
+
+Iteration: 0 / 500
+8.557%
+Iteration: 100 / 500
+89.977%
+Iteration: 200 / 500
+91.538%
+Iteration: 300 / 500
+92.065%
+Iteration: 400 / 500
+92.428%
+Iteration: 500 / 500
+92.685%
+Accuracy: 92.360%
 """
 
 """ Using Ordinary gradient descent:
