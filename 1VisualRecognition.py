@@ -30,9 +30,9 @@ class Activation:
 
 class Neuron:
      def parameters(self):
-          w1 = np.random.rand(10, 784) - 0.5
+          w1 = np.random.randn(10, 784) * np.sqrt(2/784)
           b1 = np.zeros((10, 1))
-          w2 = np.random.rand(10, 10) - 0.5
+          w2 = np.random.randn(10, 10) * np.sqrt(2/10)
           b2 = np.zeros((10, 1))
           return w1, b1, w2, b2
 
@@ -44,14 +44,14 @@ class Neuron:
           a2 = act.softmax(z2)
           return z1, a1, z2, a2
 
-     def trueY(self, y):
+     def Y(self, y):
           actualY = np.zeros((y.max()+1, y.size))
           actualY[y, np.arange(y.size)] = 1
           return actualY
 
      def backward(self, x, y, a1, a2, w2, z1, m):
           act = Activation()
-          actualY = self.trueY(y)
+          actualY = self.Y(y)
           dz2 = a2 - actualY
           dw2 = dz2.dot(a1.T) / m
           db2 = np.sum(dz2, 1) / m
@@ -63,22 +63,24 @@ class Neuron:
      def momentumDescent(self, x, y, learningRate, iterations, momentum):
           size, m = x.shape
           w1, b1, w2, b2 = self.parameters()
-          cdw1 = np.zeros((10, 784))
-          cdb1 = np.zeros((10, 1))
-          cdw2 = np.zeros((10, 10))
-          cdb2 = np.zeros((10, 1))
+          vw1 = np.zeros((10, 784))
+          vb1 = np.zeros((10, 1))
+          vw2 = np.zeros((10, 10))
+          vb2 = np.zeros((10, 1))
 
           for i in range(iterations + 1):
                z1, a1, z2, a2 = self.forward(x, w1, b1, w2, b2)
                dw1, db1, dw2, db2 = self.backward(x, y, a1, a2, w2, z1, m)
-               w1 = w1 - learningRate * dw1 - momentum * cdw1
-               b1 = b1 - learningRate * np.reshape(db1, (10,1)) - momentum * cdb1
-               w2 = w2 - learningRate * dw2 - momentum * cdw2
-               b2 = b2 - learningRate * np.reshape(db2, (10,1)) - momentum * cdb2
-               cdw1 = learningRate * dw1 + momentum * cdw1
-               cdb1 = learningRate * np.reshape(db1, (10,1)) + momentum * cdb1
-               cdw2 = learningRate * dw2 + momentum * cdw2
-               cdb2 = learningRate * np.reshape(db2, (10,1)) + momentum * cdb2
+
+               vw1 = momentum * vw1 - learningRate * dw1
+               vb1 = momentum * vb1 + learningRate * np.reshape(db1, (10,1))
+               vw2 = momentum * vw2 - learningRate * dw2
+               vb2 = momentum * vb2 + learningRate * np.reshape(db2, (10,1))
+
+               w1 += vw1
+               b1 += vb1
+               w2 += vw2
+               b2 += vb2
 
                if i % 100 == 0:
                     print(f'Iteration: {i} / {iterations}')
@@ -99,57 +101,13 @@ class Neuron:
                z1, a1, z2, a2 = self.forward(x, w1, b1, w2, b2)
                dw1, db1, dw2, db2 = self.backward(x, y, a1, a2, w2, z1, m)
                cdw1 += dw1**2
-               w1 += - learningRate * dw1 / (np.sqrt(cdw1) + eps)
+               w1 -= learningRate * dw1 / (np.sqrt(cdw1) + eps)
                cdb1 += np.reshape(db1, (10,1))**2
-               b1 += - learningRate * np.reshape(db1, (10,1)) / (np.sqrt(cdb1) + eps)
+               b1 -= learningRate * np.reshape(db1, (10,1)) / (np.sqrt(cdb1) + eps)
                cdw2 += dw2**2
-               w2 += - learningRate * dw2 / (np.sqrt(cdw2) + eps)
+               w2 -= learningRate * dw2 / (np.sqrt(cdw2) + eps)
                cdb2 += np.reshape(db2, (10,1))**2
-               b2 += - learningRate * np.reshape(db2, (10,1)) / (np.sqrt(cdb2) + eps)
-
-               if i % 100 == 0:
-                    print(f'Iteration: {i} / {iterations}')
-                    prediction = ai.predictions(a2)
-                    print(f'{self.accuracy(prediction, trainY):.3%}')
-
-          return w1, b1, w2, b2
-
-     def adam(self,x, y, learningRate, iterations, beta1=0.9, beta2=0.999, eps=1e-8):
-          size, m = x.shape
-          w1, b1, w2, b2 = self.parameters()
-          mdw1, vdw1 = np.zeros((10, 784)), np.zeros((10, 784))
-          mdb1, vdb1 = np.zeros((10, 1)), np.zeros((10, 1))
-          mdw2, vdw2 = np.zeros((10, 10)), np.zeros((10, 10))
-          mdb2, vdb2 = np.zeros((10, 1)), np.zeros((10, 1))
-
-          for i in range(iterations + 1):
-               z1, a1, z2, a2 = self.forward(x, w1, b1, w2, b2)
-               dw1, db1, dw2, db2 = self.backward(x, y, a1, a2, w2, z1, m)
-
-               mdw1 = beta1 * mdw1 + (1 - beta1) * dw1
-               mdw1i = mdw1 / (1-beta1**(i+1))
-               vdw1 = beta2 * vdw1 + (1 - beta2) * (dw1**2)
-               vdw1i = vdw1 / (1-beta2**(i+1))
-
-               mdb1 = beta1 * mdb1 + (1 - beta1) * np.reshape(db1, (10,1))
-               mdb1i = mdb1 / (1-beta1**(i+1))
-               vdb1 = beta2 * vdb1 + (1 - beta2) * (np.reshape(db1, (10,1))**2)
-               vdb1i = vdb1 / (1-beta2**(i+1))
-
-               mdw2 = beta1 * mdw2 + (1 - beta1) * dw2
-               mdw2i = mdw2 / (1-beta1**(i+1))
-               vdw2 = beta2 * vdw2 + (1 - beta2) * (dw2**2)
-               vdw2i = vdw2 / (1-beta2**(i+1))
-
-               mdb2 = beta1 * mdb2 + (1 - beta1) * np.reshape(db2, (10,1))
-               mdb2i = mdb2 / (1-beta1**(i+1))
-               vdb2 = beta2 * vdb2 + (1 - beta2) * (np.reshape(db2, (10,1))**2)
-               vdb2i = vdb2 / (1-beta2**(i+1))
-
-               w1 -= learningRate * mdw1i / (np.sqrt(vdw1i) + eps)
-               b1 -= learningRate * mdb1i / (np.sqrt(vdb1i) + eps)
-               w2 -= learningRate * mdw2i / (np.sqrt(vdw2i) + eps)
-               b2 -= learningRate * mdb2i / (np.sqrt(vdb2i) + eps)
+               b2 -= learningRate * np.reshape(db2, (10,1)) / (np.sqrt(cdb2) + eps)
 
                if i % 100 == 0:
                     print(f'Iteration: {i} / {iterations}')
@@ -189,7 +147,7 @@ class Neuron:
 if __name__ == '__main__':
      data1 = keras.datasets.mnist
      data2 = keras.datasets.fashion_mnist
-     (trainX, trainY), (testX, testY) = data2.load_data()
+     (trainX, trainY), (testX, testY) = data1.load_data()
 
      columns = trainX.shape[1]
      rows = trainX.shape[2]
@@ -202,9 +160,11 @@ if __name__ == '__main__':
      momentum = 0.95
 
      # w1, b1, w2, b2 = ai.gradientDescent(trainX, trainY, learningRate, iterations)
-     # w1, b1, w2, b2 = ai.momentumDescent(trainX, trainY, learningRate, iterations, momentum)
+     w1, b1, w2, b2 = ai.momentumDescent(trainX, trainY, learningRate, iterations, momentum)
      # w1, b1, w2, b2 = ai.adagrad(trainX, trainY, learningRate, iterations)
-     w1, b1, w2, b2 = ai.adam(trainX, trainY, learningRate, iterations)
+
      _, _, _, a2 = ai.forward(testX, w1, b1, w2, b2)
      prediction = ai.predictions(a2)
      print(f'Accuracy: {ai.accuracy(prediction, testY):.3%}')
+     
+     
