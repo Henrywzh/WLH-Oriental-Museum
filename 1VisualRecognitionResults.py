@@ -16,29 +16,19 @@ Accuracy: 93.040%
 """
 
 """ Using Ordinary gradient descent:
-Iteration: 0 / 1000
-10.252%
-Iteration: 100 / 1000
-39.312%
-Iteration: 200 / 1000
-54.745%
-Iteration: 300 / 1000
-64.262%
-Iteration: 400 / 1000
-70.132%
-Iteration: 500 / 1000
-74.177%
-Iteration: 600 / 1000
-77.015%
-Iteration: 700 / 1000
-78.880%
-Iteration: 800 / 1000
-80.385%
-Iteration: 900 / 1000
-81.520%
-Iteration: 1000 / 1000
-82.343%
-Accuracy: 83.410%
+Iteration: 0 / 500
+6.638%
+Iteration: 100 / 500
+69.308%
+Iteration: 200 / 500
+81.345%
+Iteration: 300 / 500
+84.432%
+Iteration: 400 / 500
+86.023%
+Iteration: 500 / 500
+87.038%
+Accuracy: 87.930%
 """
 
 # ---- Images ----
