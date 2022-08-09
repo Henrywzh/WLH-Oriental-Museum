@@ -44,18 +44,18 @@ Accuracy: 83.410%
 # ---- Images ----
 """ Using Momentum update:
 Iteration: 0 / 500
-14.468%
+10.822%
 Iteration: 100 / 500
-72.335%
+81.120%
 Iteration: 200 / 500
-79.773%
+83.500%
 Iteration: 300 / 500
-82.293%
+84.587%
 Iteration: 400 / 500
-83.895%
+85.240%
 Iteration: 500 / 500
-84.552%
-Accuracy: 82.870%
+85.650%
+Accuracy: 83.680%
 """
 
 """ Using Ordinary gradient descent:
