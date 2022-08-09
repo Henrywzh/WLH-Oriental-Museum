@@ -49,53 +49,17 @@ Accuracy: 83.680%
 """
 
 """ Using Ordinary gradient descent:
-Iteration: 0 / 1000
-11.260%
-Iteration: 100 / 1000
-53.437%
-Iteration: 200 / 1000
-62.270%
-Iteration: 300 / 1000
-65.912%
-Iteration: 400 / 1000
-68.155%
-Iteration: 500 / 1000
-69.597%
-Iteration: 600 / 1000
-70.880%
-Iteration: 700 / 1000
-71.923%
-Iteration: 800 / 1000
-72.857%
-Iteration: 900 / 1000
-73.595%
-Iteration: 1000 / 1000
-74.352%
-Accuracy: 73.190%
-"""
-
-""" Using Adagrad:
-Iteration: 0 / 1000
-12.708%
-Iteration: 100 / 1000
-76.598%
-Iteration: 200 / 1000
-80.272%
-Iteration: 300 / 1000
-81.657%
-Iteration: 400 / 1000
-82.447%
-Iteration: 500 / 1000
-83.075%
-Iteration: 600 / 1000
-83.523%
-Iteration: 700 / 1000
-83.863%
-Iteration: 800 / 1000
-84.153%
-Iteration: 900 / 1000
-84.362%
-Iteration: 1000 / 1000
-84.608%
-Accuracy: 83.100%
+Iteration: 0 / 500
+6.700%
+Iteration: 100 / 500
+50.005%
+Iteration: 200 / 500
+61.242%
+Iteration: 300 / 500
+66.635%
+Iteration: 400 / 500
+70.190%
+Iteration: 500 / 500
+72.490%
+Accuracy: 71.830%
 """
