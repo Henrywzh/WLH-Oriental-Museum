@@ -1,5 +1,5 @@
 """ 
-Stock Price Model Comparison, clearly my model is slightly more accurate than the online LSTM machine learning model.
+Stock Price Model Comparison, my model is slightly more accurate than the online LSTM machine learning model.
 Epoch 1/4
 494/494 [==============================] - 12s 20ms/step - loss: 43.2724
 Epoch 2/4
